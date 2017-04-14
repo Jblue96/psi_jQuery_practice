@@ -8,7 +8,8 @@
   you are also welcome to write more than the given functions.
 */
 var numberOfSquares = 10;
-var squareCount = 0;
+var countRed = 0;
+
 
 $(document).ready(onReady);
 
@@ -21,22 +22,45 @@ function onReady(){
   //call to put starting squares on DOM
   appendSquaresToDom(numberOfSquares);
 }
-function addHlClass(){
-  $('.change-highlight').on('click', addClass);
-  // $("div").addClass('highlight');
-  console.log('addHlClass', addClass);
-}
 
 function highlightASquare(){
   //This variable stores an array of the elements with the 'square' class
   var arrayOfSquares = $('.square');
-  $("div:eq(1)").addClass('highlight');
+  // $('.square').eq(countRed).addClass('highlight');
+
+  if(countRed===0){
+    $('.square').eq(countRed).addClass('highlight');
+    $('.square').eq(10).removeClass('highlight');
+    countRed++;
+
+  } else if (countRed<10 ){
+    $('.square').eq(countRed).addClass('highlight');
+
+    $('.square').eq(countRed-1).removeClass('highlight');
+    countRed++;
+  } else {
+    $('.square').eq(countRed).addClass('highlight');
+    $('.square').eq(countRed-1).removeClass('highlight');
+    countRed=0;
+  }
+  // $("div:eq(parseInt(div) + 1)").addClass('highlight');
+  // $("div").addClass(function( index, currentClass){
+  //   var addedClass;
+  //   if (currentClass === "square"){
+  //     addedClass = "highlight";
+  //   }
+  //   return addedClass;
+  // });
+  // $(highlight:nth-of-type(1)
 
   // $('.square').append('arrayOfSquares');
   // $('.square').addClass(".highlight",onReady([i],'.square'));
   // $('div:').removeClass("square",addClass("highlight"));
-
 }
+// function incrementCounter(red) {
+// console.log('incrementCounter', red);
+// countRed++;
+// }
 
 function addSquareToArray(){
 console.log('square');
