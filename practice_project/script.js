@@ -28,12 +28,13 @@ function highlightASquare(){
   var arrayOfSquares = $('.square');
   // $('.square').eq(countRed).addClass('highlight');
 
-  if(countRed===0){
-    $('.square').eq(countRed).addClass('highlight');
-    $('.square').eq(10).removeClass('highlight');
-    countRed++;
-
-  } else if (countRed<10 ){
+  // if(countRed===0){
+  //   $('.square').eq(countRed).addClass('highlight');
+  //   $('.square').eq(10).removeClass('highlight');
+  //   countRed++;
+  //
+  // } else
+  if (countRed<10 ){
     $('.square').eq(countRed).addClass('highlight');
 
     $('.square').eq(countRed-1).removeClass('highlight');
